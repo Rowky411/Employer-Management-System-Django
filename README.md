@@ -18,34 +18,45 @@
 
 ## Installation
 ### Install Dependencies:
+```bash
 pip install -r requirements.txt
+```
 
 ### Apply Migration 
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
 ### Run Server
+```bash
 python manage.py runserver
+```
 
 
 ## Postman API Testing Collection
 ### Sign up:
 - Send a POST request to "/api/auth/signup/" with the following body:
+```json
 {
     "email": "test@example.com",
     "password": "password123"
 }
+```
 ### Login:
 - Send a POST request to "/api/auth/login/" with the following body:
+```json
 {
     "email": "test@example.com",
     "password": "password123"
 }
+```
 - Copy the access token from the response.
 - Include the token in the Authorization header for all protected endpoints:
   - Authorization: Bearer <access_token>
 ### Create an Employer:
 - Send a POST request to "/api/employers/" with the following body:
+```json
 {
     "company_name": "Softvence",
     "contact_person_name": "Angel",
@@ -53,6 +64,7 @@ python manage.py runserver
     "phone_number": "321456987",
     "address": "412 Street, Test Road"
 }
+```
 ### Employers List:
 - Send a GET request to "/api/employers/"
 ### Update or Delete Employer:
