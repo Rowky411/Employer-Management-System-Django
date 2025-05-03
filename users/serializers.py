@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from .models import User, Employer
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -24,3 +24,19 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'email', 'date_joined']
         read_only_fields = ['date_joined']
+
+
+
+class EmployerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employer
+        fields = [
+            "id",
+            "company_name",
+            "contact_person_name",
+            "email",
+            "phone_number",
+            "address",
+            "created_at",
+        ]
+        
